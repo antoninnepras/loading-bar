@@ -35,6 +35,7 @@ void loading (std::string name, double* value) {
   int segments = 30;
 
   struct winsize w;
+
   ioctl(0, TIOCGWINSZ, &w);
 
   do {
@@ -42,7 +43,7 @@ void loading (std::string name, double* value) {
     use_segments = segments * *value;
     std::cout << name << ": |";
     
-    segments = w.ws_col - name.length() - 4 - 14 - 4;
+    segments = (w.ws_col == 0 ? 80 : w.ws_col) - name.length() - 4 - 14 - 4;
     
     for (int i = 0; i < segments; i++) {
       if (i < use_segments) {
@@ -64,7 +65,9 @@ void loading (std::string name, double* value) {
     est = (duration.count() / *value - duration.count())/1000000;
 
     std::cout << "[EST:" << std::setw(3);
-    if (est < 180) {
+    if (est < 0) {
+      std::cout << "----";
+    } else if (est < 180) {
       std::cout << est << "s";
     } else if (est < 180 * 60) {
       std::cout << (int)((float)est/60) << "m";
@@ -73,7 +76,7 @@ void loading (std::string name, double* value) {
     } else {
       std::cout << (int)((float)est/(3600*24)) << "d";
     } 
-    std::cout << "] \n";
+    std::cout << "]\n";
 
     
     usleep(100000);
@@ -161,7 +164,9 @@ void loading_multiple (std::vector<Loading_tag> tags) {
       std::cout << "| " <<  std::setw(3) << (int)(*tag.value*100) << "% ";
 
       std::cout << "[EST:" << std::setw(3);
-      if (est < 180) {
+      if (est < 0) {
+        std::cout << "----";
+      } else if (est < 180) {
         std::cout << est << "s";
       } else if (est < 180 * 60) {
         std::cout << (int)((float)est/60) << "m";
