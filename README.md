@@ -59,7 +59,7 @@ program_outputing_values | consload -c [color]
 
 ### compile
 ``` 
-cd /loading-bar
+cd loading-bar
 make
 ```
 
