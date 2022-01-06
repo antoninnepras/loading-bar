@@ -73,4 +73,6 @@ sudo make install
 sudo make uninstall
 ```
 
+## PROBLEMS
 
+sys/ioctl does not recognize terminal width when piping
