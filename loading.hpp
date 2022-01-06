@@ -102,7 +102,7 @@ void loading_multiple (std::vector<Loading_tag> tags) {
   using namespace std::chrono;
   int name_area_length = 0;
   for (auto i : tags) {
-    if (i.name.length() > name_area_length) {
+    if ((int)i.name.length() > name_area_length) {
       name_area_length = i.name.length();
     }
   }
@@ -139,7 +139,7 @@ void loading_multiple (std::vector<Loading_tag> tags) {
       segments = w.ws_col - name_area_length - 4 - 14 - 4;
 
       std::cout << tag.name;
-      for (int i = 0; i < name_area_length - tag.name.length(); i++) {
+      for (int i = 0; i < name_area_length - (int)tag.name.length(); i++) {
         std::cout << " ";
       }
 
