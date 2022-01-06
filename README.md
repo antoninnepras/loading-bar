@@ -37,8 +37,8 @@ program loads doubles from stdin and displays them in loading bar
 ### options
 | flag |option |
 | -------|----------- | 
-|-h --help | displays help |
-|-c --color n| change color |
+|-h \--help | displays help |
+|-c \--color n| change color |
 
 |n|color|
 |-|-|
@@ -51,6 +51,11 @@ program loads doubles from stdin and displays them in loading bar
 |6|cyan|
 |7|gray|
 |8|white|
+
+### use
+```
+program_outputing_values | consload -c [color]
+```
 
 ### compile
 ``` 
