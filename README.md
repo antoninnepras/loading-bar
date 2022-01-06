@@ -15,10 +15,57 @@ Loading bars stops, when values are greater than 1.
 
 Loading estimates remaining time based on percentage and time taken from start.
 
-![test program](loading.gif)
+![](loading.gif)
 
-## TEST
+### TEST
 Test can be compiled with:
 
- > g++ main.cpp -o main
+ ```
+make test
+```
+
+execute:
+```
+./test
+```
+
+## CONSOLE LOAD
+program loads doubles from stdin and displays them in loading bar
+
+![](cons_load.gif)
+
+### options
+| flag |option |
+| -------|----------- | 
+|-h --help | displays help |
+|-c --color n| change color |
+
+|n|color|
+|-|-|
+|0|black|
+|1|red|
+|2|green|
+|3|yellow|
+|4|blue|
+|5|violet|
+|6|cyan|
+|7|gray|
+|8|white|
+
+### compile
+``` 
+cd /loading-bar
+make
+```
+
+### install
+```
+sudo make install
+```
+
+### uninstall
+```
+sudo make uninstall
+```
+
 
