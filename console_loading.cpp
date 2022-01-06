@@ -54,6 +54,6 @@ void display_help (void) {
       << "     \e[34m4 - blue \n"
       << "     \e[35m5 - violet \n"
       << "     \e[36m6 - cyan \n"
-      << "     \e[37m7 - grey \n"
+      << "     \e[37m7 - gray \n"
       << "     \e[38m8 - white \e[0m\n";
 }
