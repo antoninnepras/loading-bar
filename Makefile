@@ -1,5 +1,5 @@
 cxx = g++
-flags = -g -Wall -Werror
+flags = -g -Wall -Werror -pthread
 target = consload
 
 all: console_loading.cpp loading.hpp
